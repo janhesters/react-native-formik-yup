@@ -1,8 +1,7 @@
-import strings from "./strings";
 import styles from "./styles";
+import LoginForm from "../../components/LoginForm";
 import React, { Component } from "react";
-import { Text, View } from "react-native";
-import { Button } from "react-native-elements";
+import { KeyboardAvoidingView } from "react-native";
 import { NavigationScreenProps } from "react-navigation";
 
 class LoginScreen extends Component<NavigationScreenProps> {
@@ -12,17 +11,9 @@ class LoginScreen extends Component<NavigationScreenProps> {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text>This is the LoginScreen.</Text>
-        <Button
-          title={strings.forgottenPassword}
-          onPress={() => this.props.navigation.navigate("PasswordResetScreen")}
-        />
-        <Button
-          title={strings.loginTitle}
-          onPress={() => this.props.navigation.navigate("HomeScreen")}
-        />
-      </View>
+      <KeyboardAvoidingView style={styles.container}>
+        <LoginForm navigation={this.props.navigation} />
+      </KeyboardAvoidingView>
     );
   }
 }
