@@ -11,7 +11,7 @@ class LoginScreen extends Component<NavigationScreenProps> {
 
   render() {
     return (
-      <KeyboardAvoidingView style={styles.container}>
+      <KeyboardAvoidingView behavior="padding" style={styles.container}>
         <LoginForm navigation={this.props.navigation} />
       </KeyboardAvoidingView>
     );

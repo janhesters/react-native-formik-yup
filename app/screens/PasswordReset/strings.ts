@@ -1,12 +1,5 @@
 import LocalizedString from "react-native-localization";
 
-let strings = new LocalizedString({
-  en: {
-    backToLogin: "Back to Log In"
-  },
-  de: {
-    backToLogin: "Zurück zum Einloggen"
-  }
-});
+let strings = new LocalizedString({});
 
 export default strings;

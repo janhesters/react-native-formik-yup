@@ -1,11 +1,12 @@
 import strings from "./strings";
 import styles from "./styles";
 import React, { Component } from "react";
-import { Platform, Text, View } from "react-native";
+import { Platform, KeyboardAvoidingView } from "react-native";
 import { Icon } from "react-native-elements";
-import { TabScene } from "react-navigation";
+import { TabScene, NavigationScreenProps } from "react-navigation";
+import RegisterForm from "../../components/RegisterForm";
 
-class RegisterScreen extends Component {
+class RegisterScreen extends Component<NavigationScreenProps> {
   static navigationOptions = {
     tabBarLabel: strings.registerTitle,
     tabBarIcon: ({ tintColor }: TabScene) => {
@@ -16,9 +17,9 @@ class RegisterScreen extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text>This is the RegisterScreen.</Text>
-      </View>
+      <KeyboardAvoidingView behavior="padding" style={styles.container}>
+        <RegisterForm navigation={this.props.navigation} />
+      </KeyboardAvoidingView>
     );
   }
 }

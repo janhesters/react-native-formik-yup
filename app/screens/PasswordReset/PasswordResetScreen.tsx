@@ -1,8 +1,7 @@
-import strings from "./strings";
 import styles from "./styles";
 import React, { Component } from "react";
-import { Text, View } from "react-native";
-import { Button } from "react-native-elements";
+import { KeyboardAvoidingView } from "react-native";
+import PasswordResetForm from "../../components/PasswordResetForm";
 import { NavigationScreenProps } from "react-navigation";
 
 class PasswordResetScreen extends Component<NavigationScreenProps> {
@@ -12,13 +11,9 @@ class PasswordResetScreen extends Component<NavigationScreenProps> {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={{ paddingBottom: 20 }}>This is the PasswordResetScreen.</Text>
-        <Button
-          title={strings.backToLogin}
-          onPress={() => this.props.navigation.navigate("LoginScreen")}
-        />
-      </View>
+      <KeyboardAvoidingView behavior="padding" style={styles.container}>
+        <PasswordResetForm navigation={this.props.navigation} />
+      </KeyboardAvoidingView>
     );
   }
 }
